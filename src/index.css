@@ -1,5 +1,29 @@
+/* imports */
+@import url(./styles/typography.css);
+
+@import url(./styles/link.css);
+
 #root {
-
-
+  /* ? width */
   --max-width: 1280px;
+
+  /* ? fg - color */
+  --fg-main-color: #f0f0f0;
+  --fg-secondary-color: #404040;
+  --fg-accent-color: #248bf2;
+
+  /* ? bg - color */
+  --bg-main-color: #ebeced;
+  --bg-secondary-color: #b9b9b9;
+  --bg-dark-color: #090909;
+
+  /* ? height */
+  --header-height: 64px;
+  --footer-height: 96px;
+
+  background-color: var(--bg-main-color);
+}
+
+body {
+  margin: 0;
 }

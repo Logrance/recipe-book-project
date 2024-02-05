@@ -1,0 +1,20 @@
+.text {
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--fg-main-color);
+  margin: 0;
+}
+
+.text_size_big {
+  font-size: 20px;
+}
+
+.text_size_small {
+  font-size: 14px;
+}
+
+.text_size_smaller {
+  font-size: 12px;
+}
