@@ -1,0 +1,43 @@
+.navbar {
+  background-color: rgba(0, 0, 255, 0.5);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 25px;
+  box-sizing: border-box;
+}
+
+.navbar__container {
+  width: 100%;
+  max-width: var(--max-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__logo {
+  width: 64px;
+  height: 64px;
+}
+
+
+.navbar__title {
+  font-size: 28px;
+  font-weight: 600;
+  display: inline-block;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  font-family: monospace;
+
+  background: linear-gradient(
+    to right,
+    #E62E5C,
+    #FEC519
+  );
+  width: fit-content;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0;
+}
+
