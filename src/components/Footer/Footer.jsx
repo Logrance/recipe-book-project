@@ -24,8 +24,18 @@ export default function Footer() {
           <h6 className='text text_size_smaller footer__authors-title'>
             create by
           </h6>
-          <a className='link text text_size_smaller'>Logrance</a>
-          <a className='link text text_size_smaller'>chyVacheck</a>
+          <a
+            href='https://github.com/Logrance'
+            className='link text text_size_smaller'
+          >
+            Logrance
+          </a>
+          <a
+            href='https://github.com/chyVacheck'
+            className='link text text_size_smaller'
+          >
+            chyVacheck
+          </a>
         </div>
       </div>
     </footer>
