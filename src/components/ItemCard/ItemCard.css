@@ -1,0 +1,62 @@
+.item-card {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 7px 14px;
+  gap: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.item-card__info {
+  display: flex;
+  gap: 7px;
+  justify-content: space-between;
+}
+
+.item-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.item-card__name {
+  color: var(--fg-secondary-color);
+}
+
+.item-card__calories {
+  color: var(--fg-secondary-color);
+}
+
+.item-card__image {
+  width: 96px;
+  height: 96px;
+}
+
+.item-card__conditional {
+  width: fit-content;
+  color: var(--fg-accent-color);
+}
+
+.item-card__conditional_healthy_unhealthy {
+  color: var(--fg-disaster-color);
+  animation: unhealthy 1s linear infinite;
+}
+
+@keyframes unhealthy {
+  0% {
+    scale: 0.8;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 0.8;
+  }
+}
+
+.item-card__button {
+  color: var(--fg-secondary-color);
+}

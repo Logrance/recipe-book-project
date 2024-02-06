@@ -2,15 +2,17 @@
 @import url(./styles/typography.css);
 
 @import url(./styles/link.css);
+@import url(./styles/button.css);
 
 #root {
   /* ? width */
-  --max-width: 1280px;
+  --max-width: 980px;
 
   /* ? fg - color */
   --fg-main-color: #f0f0f0;
   --fg-secondary-color: #404040;
   --fg-accent-color: #248bf2;
+  --fg-disaster-color: #f44345;
 
   /* ? bg - color */
   --bg-main-color: #ebeced;

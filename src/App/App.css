@@ -5,7 +5,8 @@
 }
 
 .app__container {
-  padding: 20px 25px;
+  margin: 0 auto;
+  padding: 21px 28px;
   box-sizing: border-box;
   width: 100%;
   max-width: var(--max-width);
