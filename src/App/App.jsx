@@ -1,6 +1,6 @@
 // ! modules
 import { useState } from 'react';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 
 // ? style
 import './App.css';
@@ -19,7 +19,6 @@ import AboutPage from './../Pages/AboutPage/AboutPage';
 import recipesData from './../data/recipeData.json';
 
 function App() {
-
   const [recipesToDisplay, setRecipesToDisplay] = useState(recipesData);
 
   // delete func
@@ -35,11 +34,26 @@ function App() {
       <Navbar />
       <main className='app__container'>
         <Routes>
-          <Route path="/" element={<List recipesToDisplay={recipesToDisplay} deleteRecipe={deleteRecipe} />} />
-          <Route path="/recipedetails/:recipeId" element={<ItemDetails allRecipes={recipesToDisplay} deleteRecipe={deleteRecipe} />} />
-          <Route path='/about' element={<AboutPage />} /> 
+          <Route
+            path='/'
+            element={
+              <List
+                recipesToDisplay={recipesToDisplay}
+                deleteRecipe={deleteRecipe}
+              />
+            }
+          />
+          <Route
+            path='/recipeDetails/:recipeId'
+            element={
+              <ItemDetails
+                allRecipes={recipesToDisplay}
+                deleteRecipe={deleteRecipe}
+              />
+            }
+          />
+          <Route path='/about' element={<AboutPage />} />
           <Route path='*' element={<NotFound />} />
-
         </Routes>
       </main>
       <Footer></Footer>

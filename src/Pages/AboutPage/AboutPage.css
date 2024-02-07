@@ -1,7 +1,55 @@
 .about-page {
-
+  height: 100%;
+  display: flex;
+  gap: 70px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 28px;
 }
 
-.about-page__container {
-  
+.about-page__developer {
+  margin-top: 14%;
+  max-height: 280px;
+  width: 100%;
+  max-width: 360px;
+  box-sizing: border-box;
+  padding: 21px 28px;
+  border: 1px solid var(--accent-color);
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.about-page__developer-avatar {
+  width: 74px;
+  height: 74px;
+  border-radius: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+  border: 1px solid var(--accent-color);
+}
+
+.about-page__developer-info {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  text-align: end;
+}
+
+.about-page__developer-about {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 121%;
+  font-size: large;
+  letter-spacing: 1.35px;
+  color: #040404;
+  margin-bottom: auto;
+}
+
+.about-page__developer-links {
+  width: fit-content;
+  margin-left: auto;
+  display: flex;
+  gap: 14px;
 }

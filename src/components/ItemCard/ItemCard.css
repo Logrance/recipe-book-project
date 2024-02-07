@@ -1,11 +1,13 @@
 .item-card {
+  width: 100%;
+  max-width: 450px;
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
   background-color: #fff;
   border-radius: 7px;
-  padding: 7px 14px;
-  gap: 35px;
+  padding: 21px 28px;
+  gap: 14px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
 }
@@ -55,6 +57,10 @@
   100% {
     scale: 0.8;
   }
+}
+
+.item-card__link {
+  margin-bottom: 14px;
 }
 
 .item-card__button {

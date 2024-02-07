@@ -11,11 +11,13 @@ export default function Navbar() {
   return (
     <nav className='navbar'>
       <div className='navbar__container'>
-        <NavLink to='/' className={'link'} >
+        <NavLink to='/' className='text link'>
           <img className='navbar__logo' src={iconLogo} alt='logo' />
         </NavLink>
-        
-        <NavLink to='/about'>About</NavLink>
+
+        <NavLink to='/about' className='text link navbar__link'>
+          About
+        </NavLink>
 
         <h1 className='navbar__title'>Recipe Book</h1>
       </div>

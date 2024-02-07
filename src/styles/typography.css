@@ -7,6 +7,10 @@
   margin: 0;
 }
 
+.text_weight_thin {
+  font-weight: 300;
+}
+
 .text_color_dark {
   color: var(--fg-secondary-color);
 }

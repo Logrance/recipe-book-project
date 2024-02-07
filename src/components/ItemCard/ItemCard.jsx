@@ -5,19 +5,11 @@ import { NavLink } from 'react-router-dom';
 // ? styles
 import './ItemCard.css';
 
-export default function ItemCard({ recipe, handleDelete, isLinkVisible = true }) {
-  /*
-  {
-    "id": "9e7f0d61-aa6b-418a-b56a-6418d19e6e1d",
-    "name": "Pizza",
-    "calories": 400,
-    "image": "https://i.imgur.com/eTmWoAN.png",
-    "servings": 1
-  },
-  */
-
-  // onClick = {deleteRecipe}
-
+export default function ItemCard({
+  recipe,
+  handleDelete,
+  isLinkVisible = true,
+}) {
   // conditional to check if healthy
   const isHealthy = recipe.calories < 350;
 
@@ -32,7 +24,7 @@ export default function ItemCard({ recipe, handleDelete, isLinkVisible = true })
             Calories: {recipe.calories}
           </h3>
           <h2 className='text text_size_small item-card__name'>
-            Servings: {recipe.servings}{' '}
+            Servings: {recipe.servings}
           </h2>
 
           <p
@@ -51,9 +43,14 @@ export default function ItemCard({ recipe, handleDelete, isLinkVisible = true })
         />
       </div>
 
-      {isLinkVisible && <NavLink className={'text link'} to={`/recipedetails/${recipe.id}`} >
+      {isLinkVisible && (
+        <NavLink
+          className={'text link item-card__link'}
+          to={`/recipeDetails/${recipe.id}`}
+        >
           Go to recipe
-      </NavLink>}
+        </NavLink>
+      )}
 
       <button
         className='text button item-card__button'
@@ -61,7 +58,7 @@ export default function ItemCard({ recipe, handleDelete, isLinkVisible = true })
           handleDelete(recipe.id);
         }}
       >
-          Delete
+        Delete
       </button>
     </article>
   );

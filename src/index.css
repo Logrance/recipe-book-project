@@ -8,10 +8,12 @@
   /* ? width */
   --max-width: 980px;
 
+  --accent-color: #248bf2;
+
   /* ? fg - color */
   --fg-main-color: #f0f0f0;
   --fg-secondary-color: #404040;
-  --fg-accent-color: #248bf2;
+  --fg-accent-color: var(--accent-color);
   --fg-disaster-color: #f44345;
 
   /* ? bg - color */
