@@ -1,22 +1,10 @@
 // ? styles
 import './List.css';
-import { useState } from 'react';
-
-import recipesData from './../../data/recipeData.json';
 
 // ? components
-import ItemCard from '../ItemCard/ItemCard';
+import ItemCard from './../../components/ItemCard/ItemCard';
 
-export default function List() {
-  const [recipesToDisplay, setRecipesToDisplay] = useState(recipesData);
-
-  // delete func
-  const deleteRecipe = (recipeId) => {
-    const newList = recipesToDisplay.filter((elm) => {
-      return elm.id !== recipeId;
-    });
-    setRecipesToDisplay(newList);
-  };
+export default function List({ recipesToDisplay, deleteRecipe  }) {
 
   /*
   function handleDelete(recipeId) {

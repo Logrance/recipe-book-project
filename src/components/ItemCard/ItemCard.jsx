@@ -1,8 +1,11 @@
+// ! modules
+import { NavLink } from 'react-router-dom';
+
 /* eslint-disable react/prop-types */
 // ? styles
 import './ItemCard.css';
 
-export default function ItemCard({ recipe, handleDelete }) {
+export default function ItemCard({ recipe, handleDelete, isLinkVisible = true }) {
   /*
   {
     "id": "9e7f0d61-aa6b-418a-b56a-6418d19e6e1d",
@@ -48,13 +51,17 @@ export default function ItemCard({ recipe, handleDelete }) {
         />
       </div>
 
+      {isLinkVisible && <NavLink className={'text link'} to={`/recipedetails/${recipe.id}`} >
+          Go to recipe
+      </NavLink>}
+
       <button
         className='text button item-card__button'
         onClick={() => {
           handleDelete(recipe.id);
         }}
       >
-        Delete
+          Delete
       </button>
     </article>
   );

@@ -7,6 +7,10 @@
   margin: 0;
 }
 
+.text_color_dark {
+  color: var(--fg-secondary-color);
+}
+
 .text_size_big {
   font-size: 20px;
 }
