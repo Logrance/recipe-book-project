@@ -17,12 +17,12 @@ export default function AboutPage() {
 
           <div>
             <h2 className='text text_color_dark text_size_big'>Max</h2>
-            <p className='text text_color_dark'>XXX years</p>
+            <p className='text text_color_dark'>34 years</p>
           </div>
         </div>
 
         <p className='text text_weight_thin about-page__developer-about'>
-          Just a bit information about developer, what he likes and etc
+          New kid on the block in terms of programming, so still learning the ropes! Also a massive doodler. English chap currently living in Spain.
         </p>
 
         <div className='about-page__developer-links'>
