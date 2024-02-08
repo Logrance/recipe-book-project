@@ -1,0 +1,11 @@
+.add-recipe-form {
+  min-height: 260px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  padding: 21px 28px;
+  margin: 28px 28px 42px;
+}
+
+.add-recipe-form__form {
+  display: flex;
+}

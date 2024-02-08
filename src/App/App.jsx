@@ -7,6 +7,7 @@ import './App.css';
 
 // ? components
 import Navbar from '../components/Navbar/Navbar';
+import AddRecipeForm from '../components/AddRecipeForm/AddRecipeForm';
 import Footer from '../components/Footer/Footer';
 
 // ? pages
@@ -20,6 +21,7 @@ import recipesData from './../data/recipeData.json';
 
 function App() {
   const [recipesToDisplay, setRecipesToDisplay] = useState(recipesData);
+  const [maxId, setMaxId] = useState(0);
 
   // delete func
   const deleteRecipe = (recipeId) => {
@@ -29,6 +31,13 @@ function App() {
     setRecipesToDisplay(newList);
   };
 
+  // add a new one recipe
+  function addNewRecipe(newRecipe) {
+    newRecipe.id = maxId;
+    setMaxId(maxId + 1);
+    setRecipesToDisplay([newRecipe, ...recipesToDisplay]);
+  }
+
   return (
     <section className='app'>
       <Navbar />
@@ -37,10 +46,13 @@ function App() {
           <Route
             path='/'
             element={
-              <List
-                recipesToDisplay={recipesToDisplay}
-                deleteRecipe={deleteRecipe}
-              />
+              <>
+                <AddRecipeForm handleSubmit={addNewRecipe} />
+                <List
+                  recipesToDisplay={recipesToDisplay}
+                  deleteRecipe={deleteRecipe}
+                />
+              </>
             }
           />
           <Route

@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import './ItemCard.css';
 
 export default function ItemCard({
-  isNeedDisplayIno = false,
+  isNeedDisplayInfo = false,
   recipe,
   handleDelete,
 }) {
@@ -20,7 +20,7 @@ export default function ItemCard({
           <h2 className='text text_size_small item-card__name'>
             Name: {recipe.name}
           </h2>
-          {isNeedDisplayIno && (
+          {isNeedDisplayInfo && (
             <>
               <h3 className='text text_size_small item-card__calories'>
                 Calories: {recipe.calories}
@@ -47,7 +47,7 @@ export default function ItemCard({
         />
       </div>
 
-      {!isNeedDisplayIno && (
+      {!isNeedDisplayInfo && (
         <NavLink
           className={'text link item-card__link'}
           to={`/recipeDetails/${recipe.id}`}

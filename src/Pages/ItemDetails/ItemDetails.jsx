@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // ! modules
 import { useParams } from 'react-router-dom';
 
@@ -17,9 +18,9 @@ export default function ItemDetails({ allRecipes, deleteRecipe }) {
     <ItemCard
       recipe={recipeDetails}
       handleDelete={deleteRecipe}
-      isNeedDisplayIno={true}
+      isNeedDisplayInfo
     />
   ) : (
-    <NotFound>We have no this recipe</NotFound>
+    <NotFound>We don't have this recipe</NotFound>
   );
 }
