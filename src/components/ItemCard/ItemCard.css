@@ -1,9 +1,12 @@
 .item-card {
+  margin: 0 auto;
   width: 100%;
   max-width: 450px;
+  min-height: 190px;
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
+  justify-content: space-between;
   background-color: #fff;
   border-radius: 7px;
   padding: 21px 28px;
@@ -14,7 +17,7 @@
 
 .item-card__info {
   display: flex;
-  gap: 7px;
+  gap: 28px;
   justify-content: space-between;
 }
 
@@ -38,6 +41,7 @@
 }
 
 .item-card__conditional {
+  margin-top: auto;
   width: fit-content;
   color: var(--fg-accent-color);
 }
@@ -60,7 +64,7 @@
 }
 
 .item-card__link {
-  margin-bottom: 14px;
+  text-align: center;
 }
 
 .item-card__button {

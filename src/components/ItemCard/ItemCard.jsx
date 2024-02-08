@@ -6,9 +6,9 @@ import { NavLink } from 'react-router-dom';
 import './ItemCard.css';
 
 export default function ItemCard({
+  isNeedDisplayIno = false,
   recipe,
   handleDelete,
-  isLinkVisible = true,
 }) {
   // conditional to check if healthy
   const isHealthy = recipe.calories < 350;
@@ -20,20 +20,24 @@ export default function ItemCard({
           <h2 className='text text_size_small item-card__name'>
             Name: {recipe.name}
           </h2>
-          <h3 className='text text_size_small item-card__calories'>
-            Calories: {recipe.calories}
-          </h3>
-          <h2 className='text text_size_small item-card__name'>
-            Servings: {recipe.servings}
-          </h2>
+          {isNeedDisplayIno && (
+            <>
+              <h3 className='text text_size_small item-card__calories'>
+                Calories: {recipe.calories}
+              </h3>
+              <h2 className='text text_size_small item-card__name'>
+                Servings: {recipe.servings}
+              </h2>
 
-          <p
-            className={`text item-card__conditional ${
-              !isHealthy && 'item-card__conditional_healthy_unhealthy'
-            } text_size_small`}
-          >
-            {isHealthy ? 'Healthy' : 'Unhealthy'}
-          </p>
+              <p
+                className={`text item-card__conditional ${
+                  !isHealthy && 'item-card__conditional_healthy_unhealthy'
+                } text_size_small`}
+              >
+                {isHealthy ? 'Healthy' : 'Unhealthy'}
+              </p>
+            </>
+          )}
         </div>
 
         <img
@@ -43,7 +47,7 @@ export default function ItemCard({
         />
       </div>
 
-      {isLinkVisible && (
+      {!isNeedDisplayIno && (
         <NavLink
           className={'text link item-card__link'}
           to={`/recipeDetails/${recipe.id}`}

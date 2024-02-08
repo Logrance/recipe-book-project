@@ -2,8 +2,6 @@
 import { useParams } from 'react-router-dom';
 
 /* eslint-disable react/prop-types */
-// ? styles
-import './ItemDetails.css';
 
 import ItemCard from './../../components/ItemCard/ItemCard';
 
@@ -15,12 +13,10 @@ export default function ItemDetails({ allRecipes, deleteRecipe }) {
   });
 
   return (
-    <div className='item-details'>
-      <ItemCard
-        recipe={recipeDetails}
-        handleDelete={deleteRecipe}
-        isLinkVisible={false}
-      />
-    </div>
+    <ItemCard
+      recipe={recipeDetails}
+      handleDelete={deleteRecipe}
+      isNeedDisplayIno={true}
+    />
   );
 }
