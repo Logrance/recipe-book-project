@@ -21,7 +21,9 @@ import recipesData from './../data/recipeData.json';
 
 function App() {
   const [recipesToDisplay, setRecipesToDisplay] = useState(recipesData);
-  const [favoritesRecipesToDisplay, setFavoritesRecipesToDisplay] = useState([]);
+  const [favoritesRecipesToDisplay, setFavoritesRecipesToDisplay] = useState(
+    [],
+  );
   const [maxId, setMaxId] = useState(0);
 
   // delete func
@@ -47,10 +49,12 @@ function App() {
     }
 
     setFavoritesRecipesToDisplay([newRecipe, ...favoritesRecipesToDisplay]);
-  } 
+  }
 
   function removeFromFavorites(recipeId) {
-    const newList = favoritesRecipesToDisplay.filter((elm) => elm.id !== recipeId);
+    const newList = favoritesRecipesToDisplay.filter(
+      (elm) => elm.id !== recipeId,
+    );
     setFavoritesRecipesToDisplay(newList);
   }
 
@@ -83,7 +87,7 @@ function App() {
           />
 
           <Route
-            path='/favoriutes'
+            path='/favorites'
             element={
               <>
                 <List
