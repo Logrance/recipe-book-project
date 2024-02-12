@@ -21,15 +21,38 @@ import recipesData from './../data/recipeData.json';
 
 function App() {
   const [recipesToDisplay, setRecipesToDisplay] = useState(recipesData);
+  const [favoritesRecipesToDisplay, setFavoritesRecipesToDisplay] = useState([]);
   const [maxId, setMaxId] = useState(0);
 
   // delete func
   const deleteRecipe = (recipeId) => {
-    const newList = recipesToDisplay.filter((elm) => {
-      return elm.id !== recipeId;
-    });
+    const _filterFunc = (elm) => elm.id !== recipeId;
+    const newList = recipesToDisplay.filter(_filterFunc);
+    const newFavoritesList = favoritesRecipesToDisplay.filter(_filterFunc);
+
     setRecipesToDisplay(newList);
+    setFavoritesRecipesToDisplay(newFavoritesList);
   };
+
+  function addToFavorites(recipeId) {
+    let newRecipe = {};
+
+    for (let i = 0; i < recipesToDisplay.length; i++) {
+      const recipe = recipesToDisplay[i];
+
+      if (recipe.id === recipeId) {
+        newRecipe = recipe;
+        break;
+      }
+    }
+
+    setFavoritesRecipesToDisplay([newRecipe, ...favoritesRecipesToDisplay]);
+  } 
+
+  function removeFromFavorites(recipeId) {
+    const newList = favoritesRecipesToDisplay.filter((elm) => elm.id !== recipeId);
+    setFavoritesRecipesToDisplay(newList);
+  }
 
   // add a new one recipe
   function addNewRecipe(newRecipe) {
@@ -49,12 +72,31 @@ function App() {
               <>
                 <AddRecipeForm handleSubmit={addNewRecipe} />
                 <List
+                  addToFavorites={addToFavorites}
+                  favoritesId={favoritesRecipesToDisplay.map((item) => item.id)}
+                  removeFromFavorites={removeFromFavorites}
                   recipesToDisplay={recipesToDisplay}
                   deleteRecipe={deleteRecipe}
                 />
               </>
             }
           />
+
+          <Route
+            path='/favoriutes'
+            element={
+              <>
+                <List
+                  addToFavorites={addToFavorites}
+                  favoritesId={favoritesRecipesToDisplay.map((item) => item.id)}
+                  removeFromFavorites={removeFromFavorites}
+                  recipesToDisplay={favoritesRecipesToDisplay}
+                  deleteRecipe={deleteRecipe}
+                />
+              </>
+            }
+          />
+
           <Route
             path='/recipeDetails/:recipeId'
             element={

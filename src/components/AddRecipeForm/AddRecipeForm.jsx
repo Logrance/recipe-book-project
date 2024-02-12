@@ -44,10 +44,10 @@ export default function AddRecipeForm({ handleSubmit }) {
 
   return (
     <section className='add-recipe-form'>
-      <h2 className='text text_color_dark'>Create a new recipe:</h2>
+      <h2 className='text text_color_dark text_size_big '>Create a new recipe:</h2>
       <form onSubmit={onSubmit} className='add-recipe-form__form'>
-        <label htmlFor='recipe-name'>
-          <h2>Title:</h2>
+        <label className='add-recipe-form__input' htmlFor='recipe-name'>
+          <h2 className='text text_size_small text_color_accent'>Title</h2>
           <input
             onChange={handleInputChange}
             value={inputsValue['recipe-name']}
@@ -59,8 +59,8 @@ export default function AddRecipeForm({ handleSubmit }) {
           />
         </label>
 
-        <label htmlFor='recipe-amount-calories'>
-          <h2>Amount of calories</h2>
+        <label className='add-recipe-form__input' htmlFor='recipe-amount-calories'>
+          <h2 className='text text_size_small text_color_accent'>Amount of calories</h2>
           <input
             onChange={handleInputChange}
             value={inputsValue['recipe-amount-calories']}
@@ -72,8 +72,8 @@ export default function AddRecipeForm({ handleSubmit }) {
           />
         </label>
 
-        <label htmlFor='recipe-image'>
-          <h2>Image url</h2>
+        <label className='add-recipe-form__input' htmlFor='recipe-image'>
+          <h2 className='text text_size_small text_color_accent'>Image url</h2>
           <input
             onChange={handleInputChange}
             value={inputsValue['recipe-image']}
@@ -85,8 +85,8 @@ export default function AddRecipeForm({ handleSubmit }) {
           />
         </label>
 
-        <label htmlFor='recipe-image'>
-          <h2>Servings</h2>
+        <label className='add-recipe-form__input' htmlFor='recipe-image'>
+          <h2 className='text text_size_small text_color_accent'>Servings</h2>
           <input
             onChange={handleInputChange}
             value={inputsValue['recipe-servings']}
@@ -98,7 +98,7 @@ export default function AddRecipeForm({ handleSubmit }) {
           />
         </label>
 
-        <button type='submit'>Add new recipe</button>
+        <button className='button text text_size_small text_color_accent' type='submit'>Add new recipe</button>
       </form>
     </section>
   );

@@ -7,14 +7,21 @@
   margin: 0;
 }
 
+/* ? weight */
 .text_weight_thin {
   font-weight: 300;
+}
+
+/* ? color */
+.text_color_accent {
+  color: var(--fg-accent-color);
 }
 
 .text_color_dark {
   color: var(--fg-secondary-color);
 }
 
+/* ? size */
 .text_size_big {
   font-size: 20px;
 }

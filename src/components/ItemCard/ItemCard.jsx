@@ -1,5 +1,7 @@
 // ! modules
 import { NavLink } from 'react-router-dom';
+import heart from './../../assets/heart.png'
+import emptyHeart from './../../assets/emptyheart.png'
 
 /* eslint-disable react/prop-types */
 // ? styles
@@ -8,7 +10,9 @@ import './ItemCard.css';
 export default function ItemCard({
   isNeedDisplayInfo = false,
   recipe,
+  isFavorite,
   handleDelete,
+  handleClickFavorite,
 }) {
   // conditional to check if healthy
   const isHealthy = recipe.calories < 350;
@@ -17,9 +21,25 @@ export default function ItemCard({
     <article className='item-card'>
       <div className='item-card__info'>
         <div className='item-card__text'>
-          <h2 className='text text_size_small item-card__name'>
-            Name: {recipe.name}
-          </h2>
+
+          <div className='item-card__button-and-name' >
+            <button onClick={() => {
+              handleClickFavorite(recipe.id);
+            }}
+            className='button item-card__button-favorite'>
+
+              
+              {isFavorite ? (
+                <img src={heart}/>
+              ) : (
+                <img src= {emptyHeart} />
+              )}
+              </button>
+            <h2 className='text text_size_small item-card__name'>
+              Name: {recipe.name}
+            </h2>
+          </div>
+          
           {isNeedDisplayInfo && (
             <>
               <h3 className='text text_size_small item-card__calories'>

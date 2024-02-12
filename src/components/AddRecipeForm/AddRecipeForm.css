@@ -5,8 +5,8 @@
   padding: 21px 28px;
   margin: 28px 28px 42px;
   display: flex;
- 
-  
+  flex-direction: column;
+  gap: 14px;
 }
 
 .add-recipe-form__form {
@@ -16,37 +16,18 @@
   flex: 1;
 }
 
-.add-recipe-form h2 {
-  color: var(--fg-accent--color);
-  text-decoration: none;
-  text-align: center;
-  margin: 0;
-  font-family: monospace;
-  width: 120px;
+.add-recipe-form__input {
+  display: grid;
+  grid-template-columns: 2fr 7fr;
+  align-items: center;
 }
 
 .add-recipe-form button {
-  width: 100%;
-  padding: 12px;
   background-color: var(--bg--accent-color);
   color: var(--fg-secondary-color);
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-}
-
-.add-recipe-form button:hover {
-  background-color: var(--bg--accent-hover-color);
-}
-
-.add-recipe-form label {
-  display: flex;
-  align-items: center;
-  gap:14px;
-}
-
-.add-recipe-form label h2 {
-  margin-bottom: 0;
 }
 
 .add-recipe-form input {
