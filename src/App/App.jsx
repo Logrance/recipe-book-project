@@ -1,5 +1,5 @@
 // ! modules
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 // ? style
@@ -20,7 +20,9 @@ import AboutPage from './../Pages/AboutPage/AboutPage';
 import recipesData from './../data/recipeData.json';
 
 function App() {
-  const [recipesToDisplay, setRecipesToDisplay] = useState(recipesData);
+  const [recipesToDisplay, setRecipesToDisplay] = useState(
+    sortByName(recipesData),
+  );
   const [favoritesRecipesToDisplay, setFavoritesRecipesToDisplay] = useState(
     [],
   );
@@ -65,6 +67,36 @@ function App() {
     setRecipesToDisplay([newRecipe, ...recipesToDisplay]);
   }
 
+  // sort data by name
+  function sortByName(data) {
+    return data.sort((a, b) => {
+      return a.name.localeCompare(b.name);
+    });
+  }
+
+  // change rating
+  function updateRating(recipeId, newRating) {
+    const _updateFunc = (recipe) => {
+      if (recipe.id === recipeId) {
+        return { ...recipe, rating: newRating };
+      }
+      return recipe;
+    };
+    const newList = recipesToDisplay.map(_updateFunc);
+    const newFavoritesList = favoritesRecipesToDisplay.map(_updateFunc);
+
+    setRecipesToDisplay(newList);
+    setFavoritesRecipesToDisplay(newFavoritesList);
+  }
+
+  useEffect(() => {
+    const newList = recipesToDisplay.map((elm) => {
+      elm.rating = 0;
+      return elm;
+    });
+    setRecipesToDisplay(newList);
+  }, []);
+
   return (
     <section className='app'>
       <Navbar />
@@ -76,6 +108,7 @@ function App() {
               <>
                 <AddRecipeForm handleSubmit={addNewRecipe} />
                 <List
+                  updateRating={updateRating}
                   addToFavorites={addToFavorites}
                   favoritesId={favoritesRecipesToDisplay.map((item) => item.id)}
                   removeFromFavorites={removeFromFavorites}
@@ -91,6 +124,7 @@ function App() {
             element={
               <>
                 <List
+                  updateRating={updateRating}
                   addToFavorites={addToFavorites}
                   favoritesId={favoritesRecipesToDisplay.map((item) => item.id)}
                   removeFromFavorites={removeFromFavorites}
