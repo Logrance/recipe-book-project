@@ -24,6 +24,11 @@
   height: 32px;
 }
 
+.navbar__links {
+  display: flex;
+  gap: 14px;
+}
+
 .navbar__link {
   text-align: center;
 }

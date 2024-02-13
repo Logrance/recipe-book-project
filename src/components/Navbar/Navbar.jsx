@@ -15,9 +15,15 @@ export default function Navbar() {
           <img className='navbar__logo' src={iconLogo} alt='logo' />
         </NavLink>
 
-        <NavLink to='/about' className='text link navbar__link'>
-          About
-        </NavLink>
+        <div className='navbar__links'>
+          <NavLink to='/about' className='text link navbar__link'>
+            About
+          </NavLink>
+
+          <NavLink to='/favorites' className='text link navbar__link'>
+            Favorites
+          </NavLink>
+        </div>
 
         <h1 className='navbar__title'>Recipe Book</h1>
       </div>
