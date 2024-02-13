@@ -123,14 +123,20 @@ function App() {
             path='/favorites'
             element={
               <>
-                <List
-                  updateRating={updateRating}
-                  addToFavorites={addToFavorites}
-                  favoritesId={favoritesRecipesToDisplay.map((item) => item.id)}
-                  removeFromFavorites={removeFromFavorites}
-                  recipesToDisplay={favoritesRecipesToDisplay}
-                  deleteRecipe={deleteRecipe}
-                />
+                {favoritesRecipesToDisplay.length > 0 ? (
+                  <List
+                    updateRating={updateRating}
+                    addToFavorites={addToFavorites}
+                    favoritesId={favoritesRecipesToDisplay.map(
+                      (item) => item.id,
+                    )}
+                    removeFromFavorites={removeFromFavorites}
+                    recipesToDisplay={favoritesRecipesToDisplay}
+                    deleteRecipe={deleteRecipe}
+                  />
+                ) : (
+                  <NotFound>You do not have any favorites recipe yet</NotFound>
+                )}
               </>
             }
           />
@@ -139,6 +145,10 @@ function App() {
             path='/recipeDetails/:recipeId'
             element={
               <ItemDetails
+                updateRating={updateRating}
+                addToFavorites={addToFavorites}
+                favoritesId={favoritesRecipesToDisplay.map((item) => item.id)}
+                removeFromFavorites={removeFromFavorites}
                 allRecipes={recipesToDisplay}
                 deleteRecipe={deleteRecipe}
               />

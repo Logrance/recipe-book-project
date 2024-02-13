@@ -7,17 +7,29 @@ import { useParams } from 'react-router-dom';
 import ItemCard from './../../components/ItemCard/ItemCard';
 import NotFound from '../NotFound/NotFound';
 
-export default function ItemDetails({ allRecipes, deleteRecipe }) {
+export default function ItemDetails({
+  favoritesId,
+  updateRating,
+  removeFromFavorites,
+  addToFavorites,
+  allRecipes,
+  deleteRecipe,
+}) {
   const { recipeId } = useParams();
 
   const recipeDetails = allRecipes.find((element) => {
     return element.id == recipeId;
   });
 
+  const isFavorite = favoritesId.includes(recipeDetails.id);
+
   return recipeDetails ? (
     <ItemCard
       recipe={recipeDetails}
+      updateRating={updateRating}
       handleDelete={deleteRecipe}
+      isFavorite={isFavorite}
+      handleClickFavorite={isFavorite ? removeFromFavorites : addToFavorites}
       isNeedDisplayInfo
     />
   ) : (
