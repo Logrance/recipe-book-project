@@ -1,7 +1,7 @@
 // ! modules
 import { NavLink } from 'react-router-dom';
 import heart from './../../assets/heart.png';
-import emptyHeart from './../../assets/emptyheart.png';
+import emptyHeart from './../../assets/heartempty.png';
 
 /* eslint-disable react/prop-types */
 // ? styles

@@ -17,7 +17,7 @@ export default function AboutPage() {
 
           <div>
             <h2 className='text text_color_dark text_size_big'>Max</h2>
-            <p className='text text_color_dark'>34 years</p>
+            <p title='I was born in 1989' className='text text_color_dark'>34 years old</p>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ export default function AboutPage() {
               className='text text_color_dark'
               title='I was born in December of 2002'
             >
-              21 years
+              21 years old
             </p>
           </div>
         </div>
