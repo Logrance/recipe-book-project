@@ -20,9 +20,7 @@ import AboutPage from './../Pages/AboutPage/AboutPage';
 import recipesData from './../data/recipeData.json';
 
 function App() {
-  const [recipesToDisplay, setRecipesToDisplay] = useState(
-    sortByName(recipesData),
-  );
+  const [recipesToDisplay, setRecipesToDisplay] = useState(recipesData);
   const [favoritesRecipesToDisplay, setFavoritesRecipesToDisplay] = useState(
     [],
   );
@@ -67,13 +65,6 @@ function App() {
     setRecipesToDisplay([newRecipe, ...recipesToDisplay]);
   }
 
-  // sort data by name
-  function sortByName(data) {
-    return data.sort((a, b) => {
-      return a.name.localeCompare(b.name);
-    });
-  }
-
   // change rating
   function updateRating(recipeId, newRating) {
     const _updateFunc = (recipe) => {
@@ -85,8 +76,13 @@ function App() {
     const newList = recipesToDisplay.map(_updateFunc);
     const newFavoritesList = favoritesRecipesToDisplay.map(_updateFunc);
 
-    setRecipesToDisplay(newList);
-    setFavoritesRecipesToDisplay(newFavoritesList);
+    setRecipesToDisplay(sortByRating(newList));
+    setFavoritesRecipesToDisplay(sortByRating(newFavoritesList));
+  }
+
+  // sort data by rating
+  function sortByRating(data) {
+    return data.sort((a, b) => b.rating - a.rating);
   }
 
   useEffect(() => {
